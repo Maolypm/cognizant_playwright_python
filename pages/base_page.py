@@ -14,6 +14,7 @@ class BasePage:
             "text=": self.page.get_by_text,
             "label=": self.page.get_by_label,
             "placeholder=": self.page.get_by_placeholder,
+            "role=": self.page.get_by_role,
             "alt=": self.page.get_by_alt_text,
             "title=": self.page.get_by_title,
             "test_id=": self.page.get_by_test_id
@@ -53,3 +54,17 @@ class BasePage:
     def wait_for_seconds(self, seconds: int):
         # Espera explícita (usar solo si es estrictamente necesario)
         self.page.wait_for_timeout(seconds * 1000)
+
+    def get_text(self, selector: str) -> str:
+        # 1. Creamos el locator (Playwright no lo busca en el DOM hasta que interactuamos)
+        element = self.get_locator(selector)
+        
+        # 2. Extraemos el texto (Playwright espera automáticamente a que el elemento aparezca)
+        text = element.inner_text()
+        
+        # 3. Retornamos el texto limpio o un string vacío si es None
+        return text.strip() if text else ""
+    
+    def is_element_displayed(self, selector: str) -> bool:
+        # Verifica si el elemento está visible en la página. Devuelve True o False.
+        return self.page.locator(selector).is_visible()

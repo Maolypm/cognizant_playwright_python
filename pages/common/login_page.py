@@ -4,27 +4,28 @@ class LoginPage(BasePage):
     def __init__(self, page):
         super().__init__(page)
         # Definimos los selectores usando los prefijos inteligentes de tu BasePage
-        self.url = "https://ejemplo-automation.com/login"
-        self.username_input = "placeholder=Nombre de usuario" # Usa get_by_placeholder
-        self.password_input = "label=Contraseña"              # Usa get_by_label
-        self.login_button = "text=Iniciar Sesión"            # Usa get_by_text
-        self.error_message = ".alert-danger"                 # Usa locator estándar (CSS)
+        self.url = "https://practice.expandtesting.com/login"
+        self.username_input = "label=Username"                  # Usa get_by_label
+        self.password_input = "label=Password"                  # Usa get_by_label
+        self.login_button = "#submit-login"                     # Usa locator estándar (CSS)
+        self.error_message = "text=Your password is invalid!"   # Usa get_by_text
 
-    def login_con_exito(self, usuario, contrasenia):
-        # Simula un login completo usando todos los métodos de la BasePage.
+    def navigate(self):
         # 1. Utiliza navigate_to
         self.navigate_to(self.url)
-
+    
+    def enter_username(self, username: str):
         # 2. Utiliza fill_input (con el delay de escritura humana de 100ms por defecto)
-        self.fill_input(self.username_input, usuario)
-        
-        # También podemos aumentar el delay para la contraseña si queremos ser más lentos
-        self.fill_input(self.password_input, contrasenia, delay=200)
+        self.fill_input(self.username_input, username)
 
-        # 3. Utiliza click_element
+    def enter_password(self, password: str):
+        # 3. Utiliza fill_input (con el delay de escritura humana de 100ms por defecto)        
+        self.fill_input(self.password_input, password, delay=200)
+
+    def click_submit(self):
+        # 4. Utiliza click_element para hacer clic en el botón de login
         self.click_element(self.login_button)
 
-    def obtener_error(self):
-        # Ejemplo de uso de get_locator para validaciones.
-        # 4. Utiliza get_locator para obtener el texto y validar
-        return self.get_locator(self.error_message).inner_text()
+    def validar_login_incorrecto(self) -> str:
+        # Espera a que el mensaje de error esté visible
+        return self.get_text(self.error_message)
