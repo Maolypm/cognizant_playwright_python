@@ -1,0 +1,85 @@
+{
+  "filters": {
+    "untracked": 2,
+    "failed": 1,
+    "total": 2,
+    "passed": 1,
+    "marker_counts": {}
+  },
+  "results": [
+    {
+      "test": "test_positive_login_test",
+      "nodeid": "tests/test_demo_login_steps.py::test_positive_login_test",
+      "status": "passed",
+      "duration": 14.089490599930286,
+      "trace": null,
+      "error": null,
+      "markers": [],
+      "file": ".venv\\Lib\\site-packages\\pytest_bdd\\scenario.py",
+      "line": 295,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2026-06-09T18:35:19.670696Z",
+      "screenshot": "screenshots",
+      "logs": [],
+      "worker": "main",
+      "links": [],
+      "attempts": [
+        {
+          "status": "passed",
+          "trace": null,
+          "error": null,
+          "duration": 14.089490599930286,
+          "timestamp": "2026-06-09T18:35:19.670761Z"
+        }
+      ],
+      "attempt_count": 1,
+      "flaky": false,
+      "attempt_statuses": [
+        "passed"
+      ],
+      "first_failure_index": null,
+      "first_failure": null
+    },
+    {
+      "test": "test_negative_password_test",
+      "nodeid": "tests/test_demo_login_steps.py::test_negative_password_test",
+      "status": "failed",
+      "duration": 30.710206400603056,
+      "trace": ".venv\\Lib\\site-packages\\_pytest\\fixtures.py:915: in call_fixture_func\n    fixture_result = fixturefunc(**kwargs)\n                     ^^^^^^^^^^^^^^^^^^^^^\ntests\\test_demo_login_steps.py:28: in open_login_page\n    login_page.navigate()\npages\\common\\login_page.py:15: in navigate\n    self.navigate_to(self.url)\npages\\base_page.py:10: in navigate_to\n    self.page.goto(url, wait_until=\"networkidle\")\n.venv\\Lib\\site-packages\\playwright\\sync_api\\_generated.py:9612: in goto\n    self._sync(\n.venv\\Lib\\site-packages\\playwright\\_impl\\_page.py:557: in goto\n    return await self._main_frame.goto(**locals_to_params(locals()))\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n.venv\\Lib\\site-packages\\playwright\\_impl\\_frame.py:156: in goto\n    await self._channel.send(\n.venv\\Lib\\site-packages\\playwright\\_impl\\_connection.py:69: in send\n    return await self._connection.wrap_api_call(\n.venv\\Lib\\site-packages\\playwright\\_impl\\_connection.py:559: in wrap_api_call\n    raise rewrite_error(error, f\"{parsed_st['apiName']}: {error}\") from None",
+      "error": "E   playwright._impl._errors.TimeoutError: Page.goto: Timeout 30000ms exceeded.\nE   Call log:\nE     - navigating to \"https://practice.expandtesting.com/login\", waiting until \"networkidle\"",
+      "markers": [],
+      "file": ".venv\\Lib\\site-packages\\pytest_bdd\\scenario.py",
+      "line": 295,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2026-06-09T18:35:50.758884Z",
+      "screenshot": "screenshots",
+      "logs": [],
+      "worker": "main",
+      "links": [],
+      "attempts": [
+        {
+          "status": "failed",
+          "trace": ".venv\\Lib\\site-packages\\_pytest\\fixtures.py:915: in call_fixture_func\n    fixture_result = fixturefunc(**kwargs)\n                     ^^^^^^^^^^^^^^^^^^^^^\ntests\\test_demo_login_steps.py:28: in open_login_page\n    login_page.navigate()\npages\\common\\login_page.py:15: in navigate\n    self.navigate_to(self.url)\npages\\base_page.py:10: in navigate_to\n    self.page.goto(url, wait_until=\"networkidle\")\n.venv\\Lib\\site-packages\\playwright\\sync_api\\_generated.py:9612: in goto\n    self._sync(\n.venv\\Lib\\site-packages\\playwright\\_impl\\_page.py:557: in goto\n    return await self._main_frame.goto(**locals_to_params(locals()))\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n.venv\\Lib\\site-packages\\playwright\\_impl\\_frame.py:156: in goto\n    await self._channel.send(\n.venv\\Lib\\site-packages\\playwright\\_impl\\_connection.py:69: in send\n    return await self._connection.wrap_api_call(\n.venv\\Lib\\site-packages\\playwright\\_impl\\_connection.py:559: in wrap_api_call\n    raise rewrite_error(error, f\"{parsed_st['apiName']}: {error}\") from None",
+          "error": "E   playwright._impl._errors.TimeoutError: Page.goto: Timeout 30000ms exceeded.\nE   Call log:\nE     - navigating to \"https://practice.expandtesting.com/login\", waiting until \"networkidle\"",
+          "duration": 30.710206400603056,
+          "timestamp": "2026-06-09T18:35:50.758901Z"
+        }
+      ],
+      "attempt_count": 1,
+      "flaky": false,
+      "attempt_statuses": [
+        "failed"
+      ],
+      "first_failure_index": 0,
+      "first_failure": {
+        "status": "failed",
+        "trace": ".venv\\Lib\\site-packages\\_pytest\\fixtures.py:915: in call_fixture_func\n    fixture_result = fixturefunc(**kwargs)\n                     ^^^^^^^^^^^^^^^^^^^^^\ntests\\test_demo_login_steps.py:28: in open_login_page\n    login_page.navigate()\npages\\common\\login_page.py:15: in navigate\n    self.navigate_to(self.url)\npages\\base_page.py:10: in navigate_to\n    self.page.goto(url, wait_until=\"networkidle\")\n.venv\\Lib\\site-packages\\playwright\\sync_api\\_generated.py:9612: in goto\n    self._sync(\n.venv\\Lib\\site-packages\\playwright\\_impl\\_page.py:557: in goto\n    return await self._main_frame.goto(**locals_to_params(locals()))\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n.venv\\Lib\\site-packages\\playwright\\_impl\\_frame.py:156: in goto\n    await self._channel.send(\n.venv\\Lib\\site-packages\\playwright\\_impl\\_connection.py:69: in send\n    return await self._connection.wrap_api_call(\n.venv\\Lib\\site-packages\\playwright\\_impl\\_connection.py:559: in wrap_api_call\n    raise rewrite_error(error, f\"{parsed_st['apiName']}: {error}\") from None",
+        "error": "E   playwright._impl._errors.TimeoutError: Page.goto: Timeout 30000ms exceeded.\nE   Call log:\nE     - navigating to \"https://practice.expandtesting.com/login\", waiting until \"networkidle\"",
+        "duration": 30.710206400603056,
+        "timestamp": "2026-06-09T18:35:50.758901Z"
+      }
+    }
+  ]
+}
